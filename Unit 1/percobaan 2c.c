@@ -2,5 +2,5 @@
 int main(){
 printf("Alpro itu mudah!");
 return 0;
-/*jadi yang membuat eror dari ketiga program tersebut yang 1 di percobaan*/
+//karna pada percobaan 123, terdapat syntax yang hilang, sperti tanda kutip, header dan fungsi main
 }
