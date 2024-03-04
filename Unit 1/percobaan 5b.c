@@ -7,4 +7,4 @@ int main(){
     fgets(fullname, sizeof(fullname), stdin);
     printf("Halo %s", fullname);
     return 0;
-}
+}//perbedaan pada penggunaan fgets, dan pembacaan jumlah dari array
