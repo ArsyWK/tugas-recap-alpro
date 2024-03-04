@@ -1,75 +1,47 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-// Ini fungsi buat men-generate bilangan acak antara min dan max
-int bilanganAcak(int min, int max)
+#include <iostream>
+using namespace std;
+int sisi;
+int menu;
+void keliling_Persegi(int a)
 {
-    return rand() % (max - min + 1) + min;
+    int klp = 4*a;
+    cout<<klp<<endl;
 }
-
-// Ini fungsi buat ngecek tebakannya dah bener apa belom
-int periksaTebakan(int bilangan, int tebakan)
+void luas_persegi(int a)
 {
-    if (tebakan == bilangan)
-    {
-        printf("Selamat! Kamu menebak bilangan yang benar.\n");
-        return 1; // Return 1 kalo tebakannya dah bener
-    }
-    else if (tebakan < bilangan)
-    {
-        printf("Terlalu rendah! Coba lagi.\n");
-    }
-    else
-    {
-        printf("Terlalu tinggi! Coba lagi.\n");
-    }
-    return 0; // Return 0 kalo masi blm bener
+    int ss = a*a;
+    cout<<ss<<endl;
 }
-
-int main()
+void volume_kubus(int a)
 {
-    int bilanganMin = 1;
-    int bilanganMax = 100;
-    int bilanganTarget;
-    int tebakan;
-    int percobaan = 0;
-    char mainLagi;
-
-    srand(time(NULL));
-
-    printf("Selamat datang praktikan tercinta di Permainan Tebak Bilangan!\n");
-    printf("Aku udah milih sebuah bilangan antara %d dan %d. Kira kira kamu bisa ga yaaaa nebaknya?\n", bilanganMin, bilanganMax);
-
-    // Memanggil fungsi bilanganAcak berdasarkan nilai min dan max yang telah ditentukan
-    bilanganTarget = bilanganAcak(bilanganMin, bilanganMax);
-
-    do
-    {
-        printf("Masukan tebakanmu: ");
-        scanf("%d", &tebakan);
-        percobaan++;
-
-        // Memanggil fungsi periksaTebakan berdasarkan tebakan yang kamu masukan
-        if (periksaTebakan(bilanganTarget, tebakan))
+    int vlb = a*a*a;
+    cout<<vlb<<endl;
+}
+ int main()
+{
+    cout<<"masukan menu 1.kelilingpersegi,2.luaspersegi,3.volumekubus"<<endl;
+    cin>>menu;
+    switch(menu)
         {
-            printf("Kamu melakukan %d percobaan.\n", percobaan);
-            printf("Apakah kamu ingin bermain lagi? (Y/T): ");
-            scanf("%s", &mainLagi);
-            if (mainLagi == 'Y' || mainLagi == 'y')
-            {
-                // Men-generate bilangan baru untuk permainan selanjutnya
-                bilanganTarget = bilanganAcak(bilanganMin, bilanganMax);
-                percobaan = 0;
-                printf("\nSaya telah memilih bilangan baru. Ayo bermain lagi!\n");
-            }
-            else
-            {
-                printf("Terima kasih telah bermain. Selamat tinggal!\n");
-                break; // Keluar dari perulangan
-            }
-        }
-    } while (tebakan != bilanganTarget);
+            case 1:
+                cout<<"masukan sisi:"<<endl;
+                cin>>sisi;
+               keliling_Persegi(sisi);
+                
+            break;
+            
+            case 2:
+                 cout<<"masukan sisi:"<<endl;
+                cin>>sisi;
+                luas_persegi(sisi);
 
-    return 0;
+            case 3:
+                 cout<<"masukan sisi:"<<endl;
+                cin>>sisi;
+                volume_kubus(sisi);
+                
+                break;
+            default:
+            break;
+        }
 }
