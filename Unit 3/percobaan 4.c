@@ -15,4 +15,5 @@ int main() {
     }
 
     return 0;
-}
+}//program tersebut bekerja dengan cara mendefinisi agar yg bernama tsb berubah menjadi value yang sudah didefinisikan lalu membuat array  yang berisi maksimum "isi" 
+dan maksimum panjang nama , lalu menggunakan loop agar membuat matrix sesuai dengan baris yang sudah didbuat pada array
