@@ -1,39 +1,27 @@
 #include <stdio.h>
 
-int menu;
-int jarak, waktu, kecepatan;
-
 int main() {
-    printf("Pilih Operasi yang digunakan\n");
-    printf("1. Menghitung Kecepatan:\n");
-    printf("2. Menghitung Jarak:\n");
-    printf("3. Menghitung Waktu\n");
-    printf("Masukkan nomor : ");
-    scanf("%d", &menu);
+    int jarak, waktu, kecepatan, jarak2, waktu2, kecepatan2;
 
-    printf("Masukkan nilai jarak: ");
-    scanf("%d", &jarak);
-    printf("Masukkan nilai waktu: ");
-    scanf("%d", &waktu);
-    printf("Masukkan nilai kecepatan: ");
-    scanf("%d", &kecepatan);
+    printf("Masukkan jarak, waktu, dan kecepatan: ");
+    scanf("%d %d %d", &jarak, &waktu, &kecepatan);
 
-    switch (menu) {
-        case 1:
-            kecepatan = (float)jarak / (float)waktu;
-            printf("Kecepatan: %d\n", kecepatan);
-            break;
-        case 2:
-            jarak = (float)kecepatan * (float)waktu;
-            printf("Jarak: %d\n", jarak);
-            break;
-        case 3:
-            waktu = (float)jarak / (float)kecepatan;
-            printf("Waktu: %d\n", waktu);
-            break;
-        default:
-            printf("Pilihan tidak valid.\n");
-    }
+    printf("Masukkan jarak dan waktu untuk menghitung kecepatan: ");
+    scanf("%d %d", &jarak, &waktu);
+    
+    printf("Masukkan kecepatan dan waktu untuk menghitung jarak: ");
+    scanf("%d %d", &kecepatan2, &waktu2);
+    
+    printf("Masukkan jarak dan kecepatan untuk menghitung waktu: ");
+    scanf("%d %d", &jarak2, &kecepatan2);
+    
+    float kecepatan_float = (float)jarak / (float)waktu;
+    float jarak_float = (float)kecepatan2 * (float)waktu2;
+    float waktu_float = (float)jarak2 / (float)kecepatan2;
+
+    printf("Kecepatan: %.2f\n", kecepatan_float);
+    printf("Jarak: %.2f\n", jarak_float);
+    printf("Waktu: %.2f\n", waktu_float);
 
     return 0;
 }
