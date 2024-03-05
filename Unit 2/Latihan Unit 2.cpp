@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//c
 int main() {
     
     int jumlahTransaksi, nominalTransaksi, totalTransaksi = 0;
