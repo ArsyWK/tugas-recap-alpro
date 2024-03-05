@@ -1,44 +1,38 @@
-#include <iostream>
+#include <stdio.h>
 
-using namespace std;
- int menu;
-    int jarak, waktu, kecepatan;
+int menu;
+int jarak, waktu, kecepatan;
+
 int main() {
-    
-   
+    printf("Pilih Operasi yang digunakan\n");
+    printf("1. Menghitung Kecepatan:\n");
+    printf("2. Menghitung Jarak:\n");
+    printf("3. Menghitung Waktu\n");
+    printf("Masukkan nomor : ");
+    scanf("%d", &menu);
 
-    
-    cout << "Pilih Operasi yang digunakan" << endl;
-    cout << "1. Menghitung Kecepatan:" << endl;
-    cout << "2. Menghitung Jarak:" << endl;
-    cout << "3. Menghitung Waktu" << endl;
-    cout << "Masukkan nomor : ";
-    cin >> menu;
+    printf("Masukkan nilai jarak: ");
+    scanf("%d", &jarak);
+    printf("Masukkan nilai waktu: ");
+    scanf("%d", &waktu);
+    printf("Masukkan nilai kecepatan: ");
+    scanf("%d", &kecepatan);
 
-    
-    cout << "Masukkan nilai jarak: ";
-    cin >> jarak;
-    cout << "Masukkan nilai waktu: ";
-    cin >> waktu;
-    cout << "Masukkan nilai kecepatan: ";
-    cin >> kecepatan;
-
- 
     switch (menu) {
         case 1:
-            kecepatan = static_cast<float>(jarak) / static_cast<float>(waktu);
-            cout << "Kecepatan: " << kecepatan << endl;
+            kecepatan = (float)jarak / (float)waktu;
+            printf("Kecepatan: %d\n", kecepatan);
             break;
         case 2:
-            jarak = static_cast<float>(kecepatan) * static_cast<float>(waktu);
-            cout << "Jarak: " << jarak << endl;
+            jarak = (float)kecepatan * (float)waktu;
+            printf("Jarak: %d\n", jarak);
             break;
         case 3:
-            waktu = static_cast<float>(jarak) / static_cast<float>(kecepatan);
-            cout << "Waktu: " << waktu << endl;
+            waktu = (float)jarak / (float)kecepatan;
+            printf("Waktu: %d\n", waktu);
             break;
         default:
-            cout << "Pilihan tidak valid." << endl;
+            printf("Pilihan tidak valid.\n");
     }
 
     return 0;
