@@ -1,0 +1,4 @@
+h elemen pada array: " << total << endl;
+
+    return 0;
+}
