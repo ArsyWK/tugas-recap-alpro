@@ -2,7 +2,7 @@
 
 using namespace std;
  int menu;
-    float jarak, waktu, kecepatan;
+    int jarak, waktu, kecepatan;
 int main() {
     
    
