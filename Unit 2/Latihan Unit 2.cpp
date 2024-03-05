@@ -1,30 +1,28 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main() {
     
     int jumlahTransaksi, nominalTransaksi, totalTransaksi = 0;
 
    
-    cout << "Masukkan jumlah transaksi: ";
-    cin >> jumlahTransaksi;
+    printf("Masukkan jumlah transaksi: ");
+    scanf("%d", &jumlahTransaksi);
 
    
     if (jumlahTransaksi <= 0) {
-        cout << "Tidak ada transaksi hari ini" << endl;
+        printf("Tidak ada transaksi hari ini\n");
         return 0;
     }
 
 
     for (int i = 0; i < jumlahTransaksi; i++) {
-        cout << "Masukkan nominal transaksi ke-" << i + 1 << ": ";
-        cin >> nominalTransaksi;
+        printf("Masukkan nominal transaksi ke-%d: ", i + 1);
+        scanf("%d", &nominalTransaksi);
         totalTransaksi += nominalTransaksi;
     }
 
   
-    cout << "Total pengeluaran hari ini: " << totalTransaksi << endl;
+    printf("Total pengeluaran hari ini: %d\n", totalTransaksi);
 
     return 0;
 }
